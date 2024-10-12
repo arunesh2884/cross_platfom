@@ -1,4 +1,4 @@
-name: arunesh
+name: jayasudha
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -39,6 +39,13 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  provider: ^6.0.5
+  badges: ^3.0.2
+  shared_preferences: ^2.0.17
+  sqflite: ^2.2.5
+  path_provider: ^2.0.14
+  path: ^1.8.3
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -61,13 +68,33 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
      - assets/pizza.jpg
-     - assets/meals.png
+     - assets/profile.jpg
+     - assets/meals.jpg
      - assets/juice.jpg
      - assets/desserts.jpg
      - assets/chillyparotta.jpg
      - assets/chat.jpg
-     - assets/Dosa.jpeg
+     - assets/dosa.jpg
      - assets/banner.jpeg
+     - assets/Blackberry.jpg
+     - assets/Mango-Berry Smoothie.jpg
+     - assets/Rum-Berry.jpg
+     - assets/Vanilla_Strawberry_Iced_Juice.jpg
+     - assets/Vegan_Mango_Lassi.jpg
+     - assets/Gulab-Jamun.jpg
+     - assets/Candy-Meadow-Cupcakes.jpg
+     - assets/Bavarois-Framboise.jpg
+     - assets/bengali-sponge-rasgulla .jpg
+     - assets/Kesar-Mawa-Modak.jpg
+     - assets/Aloo-Chana.jpg
+     - assets/BhelPuri.jpg
+     - assets/DahiPuri.jpg
+     - assets/SevPuri.jpg
+     - assets/KatoriChaat.jpg
+     - assets/Telugu_Thali.jpg
+     - assets/South-Indian-thali.jpg
+     - assets/Thala-vazhai-ilai.jpg
+     - assets/Veg-Thali.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

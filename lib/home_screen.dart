@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:jayasudha/screen/product_list.dart';
 import 'item_screen.dart';
+import 'package:jayasudha/screen/juice_list.dart';
+import 'package:jayasudha/screen/dessert_list.dart';
+import 'package:jayasudha/screen/chat_list.dart';
+import 'package:jayasudha/screen/meal_list.dart';
 
 
 class HomeScreen extends StatelessWidget {
+
+
   final String userName;
   final List<String> foods = [
     "Desserts",
@@ -79,7 +86,7 @@ HomeScreen({required this.userName});
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           image: DecorationImage(
-                            image: AssetImage("assets/pizza.jpg"),
+                            image: AssetImage("assets/profile.jpg"),
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -162,7 +169,12 @@ HomeScreen({required this.userName});
                     ),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ProductList()), // Navigate to ProductList
+                      );
+                    },
                     child: Text(
                       "See All",
                       style: TextStyle(
@@ -190,6 +202,40 @@ HomeScreen({required this.userName});
                       color: bgColors[index],
                       borderRadius: BorderRadius.circular(10),
                     ),
+                      child: InkWell(
+                      onTap: () {
+                        if (foods[index] == "Desserts") {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DessertList(),
+                            ),
+                          );
+                        } else if (foods[index] == "Chat") {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ChatList(),
+                            ),
+                          );
+                        }
+                        else if (foods[index] == "Juice") {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => JuiceList(),
+                            ),
+                          );
+                        }
+                        else if (foods[index] == "Meals") {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MealList(),
+                            ),
+                          );
+                        }
+                  },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
@@ -207,7 +253,9 @@ HomeScreen({required this.userName});
                         ),
                       ],
                     ),
+                  ),
                   );
+
                 },
               ),
             ),
@@ -271,7 +319,7 @@ HomeScreen({required this.userName});
                               topRight: Radius.circular(10),
                             ),
                             child: Image.asset(
-                              "assets/${foods2[index].toLowerCase().replaceAll(' ', '_')}.jpeg",
+                              "assets/${foods2[index].toLowerCase().replaceAll(' ', '_')}.jpg",
                               height: 70,
                               width: MediaQuery.of(context).size.width / 1.7,
                               fit: BoxFit.cover,
@@ -363,3 +411,6 @@ HomeScreen({required this.userName});
     );
   }
 }
+
+
+

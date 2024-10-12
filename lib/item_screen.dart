@@ -1,5 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:jayasudha/provider/cartprovider.dart';
+import 'package:provider/provider.dart';
+import 'screen/cart_screen.dart';
+
+
 class ItemScreen extends StatelessWidget {
   const ItemScreen({super.key});
 
@@ -218,7 +223,14 @@ class ItemScreen extends StatelessWidget {
 
       ),
       bottomNavigationBar: InkWell(
-        onTap: (){},
+        onTap: () {
+
+          // Navigate to CartScreen
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => CartScreen()),
+          );
+        },
         child: Container(
           height: 60,
           margin: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
@@ -230,14 +242,17 @@ class ItemScreen extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Add to cart",
+              Text(
+                "Add to cart",
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
-                ),),
+                ),
+              ),
               SizedBox(width: 10),
-              Icon(Icons.add_circle_outline_rounded,
+              Icon(
+                Icons.add_circle_outline_rounded,
                 color: Colors.white,
                 size: 20,
               ),

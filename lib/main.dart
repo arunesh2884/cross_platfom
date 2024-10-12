@@ -1,20 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:jayasudha/provider/cartprovider.dart';
 import 'home_screen.dart';
+import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();  // Initialize Flutter bindings
+
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Food Delivery App',
-      theme: ThemeData(
-        primarySwatch: Colors.orange,
+    return ChangeNotifierProvider(
+      create: (_) => CartProvider(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Food Delivery App',
+        theme: ThemeData(
+          primarySwatch: Colors.orange,
+        ),
+        home: LoginScreen(),
       ),
-      home: LoginScreen(),
     );
   }
 }
